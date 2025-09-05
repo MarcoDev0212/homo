@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Só entre Nós - Site de Relacionamento para Homossexuais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom animations */
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-bounce-in { animation: bounceIn 0.6s ease-out; }
+
+        /* Pride gradient for header */
+        .pride-bg {
+            background: linear-gradient(45deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 min-h-screen font-sans">
+    <!-- Hero Section -->
+    <header class="pride-bg text-white py-12 shadow-lg">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 animate-bounce-in">Só entre Nós</h1>
+            <p class="text-xl md:text-2xl mb-6 opacity-90">Conecte-se com almas afins neste espaço seguro e acolhedor</p>
+            <div class="flex justify-center space-x-6 text-lg">
+                <span><i class="fas fa-heart text-pink-300"></i> Amor Verdadeiro</span>
+                <span><i class="fas fa-users text-purple-300"></i> Comunidade Forte</span>
+                <span><i class="fas fa-shield-alt text-blue-300"></i> Privacidade Garantida</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Search and Filter Section -->
+        <section class="mb-12 text-center">
+            <input type="text" id="searchInput" placeholder="Buscar por nome, interesses..." class="px-4 py-2 rounded-full border-2 border-white bg-white bg-opacity-20 text-white placeholder-gray-200 w-full md:w-1/2 focus:outline-none focus:ring-4 focus:ring-pink-400" oninput="filterProfiles()">
+            <div class="mt-4">
+                <select id="ageFilter" class="px-3 py-2 rounded-lg bg-white bg-opacity-20 text-white mr-4" onchange="filterProfiles()">
+                    <option value="">Idade</option>
+                    <option value="25">Abaixo de 30</option>
+                    <option value="30">30+</option>
+                </select>
+                <select id="interestFilter" class="px-3 py-2 rounded-lg bg-white bg-opacity-20 text-white" onchange="filterProfiles()">
+                    <option value="">Interesses</option>
+                    <option value="arte">Arte</option>
+                    <option value="tecnologia">Tecnologia</option>
+                    <option value="esporte">Esporte</option>
+                    <option value="natureza">Natureza</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Profiles Gallery -->
+        <section id="profiles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Sample Profile 1 -->
+            <div class="profile-card bg-white bg-opacity-90 rounded-2xl shadow-2xl p-6 hover:shadow-3xl transform hover:scale-105 transition duration-500 ease-in-out cursor-pointer animate-bounce-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b18928dc-6267-4ead-8308-ef80c869098d.png" alt="Fotografia profissional de um homem sorrindo com cabelos castanhos curtos, olhos castanhos, vestindo uma camisa azul celeste, com fundo urbano nebulado ao entardecer, transmitindo confiança e alegria, imagem gerada automaticamente baseada na descrição" class="w-full h-48 object-cover rounded-xl mb-4 border-4 border-pink-300">
+                <h3 class="text-xl font-bold text-purple-600 mb-2">Carlos, 28 anos</h3>
+                <p class="text-gray-700 mb-4">Oi! Sou um designer gráfico apaixonado por viagens e culinária. Busco alguém para compartilhar aventuras e noites culinárias. Gosto de filmes independentes e caminhadas ao ar livre. Vamos conversar!</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-pink-500"><i class="fas fa-map-marker-alt"></i> São Paulo</span>
+                    <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-700 transition duration-300" onclick="alert('Perfil de Carlos curtido!')"><i class="fas fa-heart"></i> Curtir</button>
+                </div>
+            </div>
+
+            <!-- Sample Profile 2 -->
+            <div class="profile-card bg-white bg-opacity-90 rounded-2xl shadow-2xl p-6 hover:shadow-3xl transform hover:scale-105 transition duration-500 ease-in-out cursor-pointer animate-bounce-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c56663de-ea24-46e4-8f27-eac89ce42797.png" alt="Retrato artístico de um jovem pardo com dreads longos, barbicha bem cuidada, vestindo uma blusa branca casual, com fundo de jardim florido colorido em um dia ensolarado, exalando energia positiva e creatividade, imagem gerada automaticamente baseada na descrição" class="w-full h-48 object-cover rounded-xl mb-4 border-4 border-pink-300">
+                <h3 class="text-xl font-bold text-purple-600 mb-2">Marcos, 25 anos</h3>
+                <p class="text-gray-700 mb-4">Ator em ascensão e apaixonado por teatro. Adoro noites de mais e bons vinhos. Estou procurando por alguém afetuoso e que goste de arte. Vamos criar juntos momentos inesquecíveis!</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-pink-500"><i class="fas fa-map-marker-alt"></i> Rio de Janeiro</span>
+                    <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-700 transition duration-300" onclick="alert('Perfil de Marcos curtido!')"><i class="fas fa-heart"></i> Curtir</button>
+                </div>
+            </div>
+
+            <!-- Sample Profile 3 -->
+            <div class="profile-card bg-white bg-opacity-90 rounded-2xl shadow-2xl p-6 hover:shadow-3xl transform hover:scale-105 transition duration-500 ease-in-out cursor-pointer animate-bounce-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ecb0c2ec-221f-4314-ab47-4ff9aa3a1d34.png" alt="Imagem estilosa de um homem asiático com cabelo escuro penteado para trás, óculos modernos, blazer preto sobre camisa branca, posando em um café charmoso com livros antigos, mostrando elegância e inteligência, imagem gerada automaticamente baseada na descrição" class="w-full h-48 object-cover rounded-xl mb-4 border-4 border-pink-300">
+                <h3 class="text-xl font-bold text-purple-600 mb-2">Thiago, 32 anos</h3>
+                <p class="text-gray-700 mb-4">Empresário tech com coração de nerd. Apaixonado por jogos de tabuleiro e programação. Busco um parceiro para dividir risadas, jantares finos e talvez um hackathon juntos. #nerdpower</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-pink-500"><i class="fas fa-map-marker-alt"></i> Porto Alegre</span>
+                    <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-700 transition duration-300" onclick="alert('Perfil de Thiago curtido!')"><i class="fas fa-heart"></i> Curtir</button>
+                </div>
+            </div>
+
+            <!-- Sample Profile 4 -->
+            <div class="profile-card bg-white bg-opacity-90 rounded-2xl shadow-2xl p-6 hover:shadow-3xl transform hover:scale-105 transition duration-500 ease-in-out cursor-pointer animate-bounce-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/37b84034-a093-4b8e-be32-e5c68b7842c2.png" alt="Fotografia conceituosa de um latinohispânico com maquiagem sfumada, cachecol colorido ao redor do pescoço, com fundo de close-up de flores vibrantes, transmitindo paixão e sensibilidade, imagem gerada automaticamente baseada na descrição" class="w-full h-48 object-cover rounded-xl mb-4 border-4 border-pink-300">
+                <h3 class="text-xl font-bold text-purple-600 mb-2">Alex, 29 anos</h3>
+                <p class="text-gray-700 mb-4">Fotógrafo freelance e amante da natureza. Gosto de capturar momentos únicos e explorar trilhas. Procurando alguém para compartilhar passeios e noites estreladas. Vamos descobrir o mundo juntos?</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-pink-500"><i class="fas fa-map-marker-alt"></i> Belo Horizonte</span>
+                    <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-700 transition duration-300" onclick="alert('Perfil de Alex curtido!')"><i class="fas fa-heart"></i> Curtir</button>
+                </div>
+            </div>
+
+            <!-- Sample Profile 5 -->
+            <div class="profile-card bg-white bg-opacity-90 rounded-2xl shadow-2xl p-6 hover:shadow-3xl transform hover:scale-105 transition duration-500 ease-in-out cursor-pointer animate-bounce-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aeea7f1b-c1c8-41dd-be17-971fb2e713f6.png" alt="Retrato minimalista de um afro-americano com corte de cabelo alto e baixo, barba curta, vestindo suéter bege, com fundo neutro branco, exalando calma e confiança serena, imagem gerada automaticamente baseada na descrição" class="w-full h-48 object-cover rounded-xl mb-4 border-4 border-pink-300">
+                <h3 class="text-xl font-bold text-purple-600 mb-2">Lucas, 30 anos</h3>
+                <p class="text-gray-700 mb-4">Professor universitário querido pelos alunos. Apaixonado por literatura e café da manhã. Busco conexão genuína com alguém que valorize o diálogo profundo e os pequenos momentos.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-pink-500"><i class="fas fa-map-marker-alt"></i> Salvador</span>
+                    <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-700 transition duration-300" onclick="alert('Perfil de Lucas curtido!')"><i class="fas fa-heart"></i> Curtir</button>
+                </div>
+            </div>
+
+            <!-- Sample Profile 6 -->
+            <div class="profile-card bg-white bg-opacity-90 rounded-2xl shadow-2xl p-6 hover:shadow-3xl transform hover:scale-105 transition duration-500 ease-in-out cursor-pointer animate-bounce-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b6f388f5-49c5-414d-8f29-02e0db05eb52.png" alt="Imagem dinâmica de um europeu com cabelos loiros ondulados, sorriso largo, camiseta azul marinho, com fundo de praia ao pôr do sol, mostrando energia jovem e aventura, imagem gerada automaticamente baseada na descrição" class="w-full h-48 object-cover rounded-xl mb-4 border-4 border-pink-300">
+                <h3 class="text-xl font-bold text-purple-600 mb-2">Rafael, 26 anos</h3>
+                <p class="text-gray-700 mb-4">Treinador pessoal entusiasta de corrida e vegetarianismo. Adoro praias e leitura. Estou à procura de um parceiro ativo para correr juntos e construir uma vida saudável e feliz!</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-pink-500"><i class="fas fa-map-marker-alt"></i> Florianópolis</span>
+                    <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-purple-700 transition duration-300" onclick="alert('Perfil de Rafael curtido!')"><i class="fas fa-heart"></i> Curtir</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Testimonials Section -->
+    <section class="bg-white bg-opacity-10 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Depoimentos dos Usuários</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-20 p-6 rounded-xl">
+                    <p class="text-white italic">"Encontramos nossa conexão perfeita aqui!"</p>
+                    <cite class="block mt-4 text-pink-200">-- João e Pedro</cite>
+                </div>
+                <div class="bg-white bg-opacity-20 p-6 rounded-xl">
+                    <p class="text-white italic">"Ambiente seguro e acolhedor."</p>
+                    <cite class="block mt-4 text-pink-200">-- Maria</cite>
+                </div>
+                <div class="bg-white bg-opacity-20 p-6 rounded-xl">
+                    <p class="text-white italic">"Finalmente encontrei meu match!"</p>
+                    <cite class="block mt-4 text-pink-200">-- Antônio</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 Só entre Nós. Todos os direitos reservados.</p>
+            <p>Compromissada com a diversidade e inclusão.</p>
+            <div class="mt-4">
+                <a href="#" class="text-pink-400 hover:text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-pink-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-pink-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterProfiles() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const age = document.getElementById('ageFilter').value;
+            const interest = document.getElementById('interestFilter').value;
+            
+            const profiles = document.querySelectorAll('.profile-card');
+            profiles.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+                const ageText = card.querySelector('h3').textContent;
+                
+                let show = true;
+                if (search && !name.includes(search) && !desc.includes(search)) show = false;
+                if (age) {
+                    const ageNum = parseInt(ageText.match(/\d+/)[0]);
+                    if (age === '25' && ageNum >= 30) show = false;
+                    if (age === '30' && ageNum < 30) show = false;
+                }
+                if (interest) {
+                    if (interest === 'arte' && !desc.includes('arte')) show = false;
+                    if (interest === 'tecnologia' && !desc.includes('tech')) show = false;
+                    if (interest === 'esporte' && !desc.includes('corrida') && !desc.includes('praias')) show = false;
+                    if (interest === 'natureza' && !desc.includes('natureza') && !desc.includes('trilhas')) show = false;
+                }
+                
+                card.style.display = show ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
+</content>
+</create_file>
